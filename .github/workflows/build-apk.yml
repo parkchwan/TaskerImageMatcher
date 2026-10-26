@@ -263,8 +263,11 @@ jobs:
           print("Restored Android app and Gradle settings.")
           PYCODE
 
+      - 
       - name: Restore original debug signing key
+        if: $&#123;&#123; false &#125;&#125;
         shell: bash
+  
         env:
           ORIGINAL_DEBUG_KEYSTORE_BASE64: ${{ secrets.ORIGINAL_DEBUG_KEYSTORE_BASE64 }}
         run: |
